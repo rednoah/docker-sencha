@@ -23,8 +23,7 @@ RUN set -eux \
  ## * extract installer
  && 7z x -y -o/tmp /tmp/SenchaCmd.zip \
  && /tmp/SenchaCmd-*.sh -q -dir /opt/sencha/cmd \
- && rm -rv /tmp/*.{sh,zip} \
- && exit 1
+ && rm -v /tmp/*.sh /tmp/*.zip
 
 
 WORKDIR /src
