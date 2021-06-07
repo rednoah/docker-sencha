@@ -26,6 +26,9 @@ RUN set -eux \
  && rm -v /tmp/*.sh /tmp/*.zip
 
 
+EXPOSE 1841
+
+
 WORKDIR /src
 
 
