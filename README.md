@@ -1,6 +1,7 @@
-# docker-sencha
+# Sencha Build Tools
 
 `sencha` command as [`docker container`](https://hub.docker.com/r/rednoah/sencha-build).
+- [`sencha` (*Dockerfile*)](https://github.com/rednoah/docker-sencha/blob/master/Dockerfile)
 
 ## Usage:
 ```sh
