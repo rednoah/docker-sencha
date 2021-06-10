@@ -1,6 +1,6 @@
 # Sencha Build Tools
 
-`sencha` command as [`docker container`](https://hub.docker.com/r/rednoah/sencha-build).
+Docker image for [Sencha Cmd](https://www.sencha.com/products/extjs/cmd-download/).
 - [`sencha` (*Dockerfile*)](https://github.com/rednoah/docker-sencha/blob/master/Dockerfile)
 
 ## Usage:
