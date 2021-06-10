@@ -1,9 +1,12 @@
 # Sencha Build Tools
 
-Docker image for [Sencha Cmd](https://www.sencha.com/products/extjs/cmd-download/).
+Docker image for [Sencha Cmd](https://docs.sencha.com/cmd/guides/intro_to_cmd.html).
 - [`sencha` (*Dockerfile*)](https://github.com/rednoah/docker-sencha/blob/master/Dockerfile)
 
 ## Usage:
+
+The [`sencha`](https://docs.sencha.com/cmd/guides/intro_to_cmd.html) command-line tool:
+
 ```sh
 docker run -it -v "$PWD/example:/src" -p 1841:1841 docker-sencha app watch
 ```
