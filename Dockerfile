@@ -1,18 +1,14 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 LABEL maintainer="Reinhard Pointner <rednoah@filebot.net>"
 
 
-ENV SENCHA_CMD_VERSION 7.4.0.39
-ENV SENCHA_CMD_URL https://trials.sencha.com/cmd/$SENCHA_CMD_VERSION/no-jre/SenchaCmd-$SENCHA_CMD_VERSION-linux-64-no-jre.zip
-ENV SENCHA_CMD_SHA256 63662988751948d52bc85c3a2c5286a6ad8cd232c5050cef231ac35c69241647
+ENV SENCHA_CMD_VERSION 7.5.0.5
+ENV SENCHA_CMD_URL https://trials.sencha.com/cmd/$SENCHA_CMD_VERSION/no-jre/SenchaCmd-$SENCHA_CMD_VERSION-linux-amd64.sh.zip
+ENV SENCHA_CMD_SHA256 e63f6855d863ad4fcfc17d7f0bfbee0b06b35ea02ac7ae3961b8eb96bdca2026
 
 
 ENV LANG C.UTF-8
-
-
-# https://logging.apache.org/log4j/2.x/security.html
-ENV LOG4J_FORMAT_MSG_NO_LOOKUPS=true
 
 
 RUN apt-get update \
