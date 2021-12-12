@@ -11,6 +11,10 @@ ENV SENCHA_CMD_SHA256 63662988751948d52bc85c3a2c5286a6ad8cd232c5050cef231ac35c69
 ENV LANG C.UTF-8
 
 
+# https://logging.apache.org/log4j/2.x/security.html
+ENV LOG4J_FORMAT_MSG_NO_LOOKUPS=true
+
+
 RUN apt-get update \
  && apt-get install -y curl p7zip-full openjdk-8-jdk nodejs \
  && rm -rvf /var/lib/apt/lists/*
