@@ -12,7 +12,7 @@ ENV LANG C.UTF-8
 
 
 RUN apt-get update \
- && apt-get install -y curl p7zip-full openjdk-8-jdk nodejs \
+ && apt-get install -y curl unzip openjdk-17-jdk-headless nodejs \
  && rm -rvf /var/lib/apt/lists/*
 
 
@@ -21,7 +21,7 @@ RUN set -eux \
  && curl -L -o /tmp/SenchaCmd.zip "$SENCHA_CMD_URL" \
  && echo "$SENCHA_CMD_SHA256 */tmp/SenchaCmd.zip" | sha256sum -c - \
  ## * extract installer
- && 7z x -y -o/tmp /tmp/SenchaCmd.zip \
+ && unzip -o /tmp/SenchaCmd.zip -d /tmp \
  && /tmp/SenchaCmd-*.sh -q -dir /opt/sencha/cmd \
  && rm -v /tmp/*.sh /tmp/*.zip
 
