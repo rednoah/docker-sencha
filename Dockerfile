@@ -12,7 +12,7 @@ ENV LANG C.UTF-8
 
 
 RUN apt-get update \
- && apt-get install -y curl unzip openjdk-17-jdk-headless nodejs \
+ && apt-get install -y curl unzip openjdk-11-jdk-headless nodejs \
  && rm -rvf /var/lib/apt/lists/*
 
 
