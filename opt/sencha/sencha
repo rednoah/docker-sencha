@@ -1,0 +1,2 @@
+#!/bin/sh
+/opt/sencha/cmd/sencha config --file /opt/sencha/sencha.properties then "$@"
