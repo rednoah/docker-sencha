@@ -45,4 +45,4 @@ EXPOSE 1841
 WORKDIR /src
 
 
-ENTRYPOINT ["sencha"]
+ENTRYPOINT ["/opt/sencha/sencha"]
