@@ -1,7 +1,7 @@
 # Sencha Build Tools
 
 Docker image for [Sencha Cmd](https://docs.sencha.com/cmd/guides/intro_to_cmd.html).
-- [`sencha` (*Dockerfile*)](https://github.com/rednoah/docker-sencha/blob/master/Dockerfile)
+- [`sencha` (*Dockerfile*)](https://github.com/rednoah/docker-sencha/blob/main/Dockerfile)
 
 
 ## Usage:
