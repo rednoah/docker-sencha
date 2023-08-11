@@ -22,7 +22,8 @@ RUN set -eux \
  ## * extract installer
  && unzip -o /tmp/SenchaCmd.zip -d /tmp \
  && /tmp/SenchaCmd-*.sh -q -dir /opt/sencha/cmd \
- && rm -v /tmp/*.sh /tmp/*.zip
+ && rm -v /tmp/*.sh /tmp/*.zip \
+ && ln -sf /opt/sencha/cmd/sencha /opt/sencha/sencha
 
 
 RUN set -eux \
@@ -33,9 +34,7 @@ RUN set -eux \
  && rm -rf /var/lib/apt/lists/* \
  ## * remove native dependencies
  && find /opt/sencha/cmd/bin/linux-x64 -type f -executable -print -delete \
- && ln -s /usr/bin/node /opt/sencha/cmd/bin/linux-x64/node/node \
- ## * disable phantomjs
- && echo "skip.slice=1" > /opt/sencha/sencha.cfg
+ && ln -sf /usr/bin/node /opt/sencha/cmd/bin/linux-x64/node/node
 
 
 EXPOSE 1841
