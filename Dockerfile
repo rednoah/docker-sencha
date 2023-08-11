@@ -23,9 +23,6 @@ RUN set -eux \
  && unzip -o /tmp/SenchaCmd.zip -d /tmp \
  && /tmp/SenchaCmd-*.sh -q -dir /opt/sencha/cmd \
  && rm -v /tmp/*.sh /tmp/*.zip
-
-
-RUN set -eux \
  ## * remove native dependencies
  && find /opt/sencha/cmd/bin/linux-x64 -type f -executable -print -delete \
  && ln -s /usr/bin/node /opt/sencha/cmd/bin/linux-x64/node/node
