@@ -33,7 +33,9 @@ RUN set -eux \
  && rm -rf /var/lib/apt/lists/* \
  ## * remove native dependencies
  && find /opt/sencha/cmd/bin/linux-x64 -type f -executable -print -delete \
- && ln -s /usr/bin/node /opt/sencha/cmd/bin/linux-x64/node/node
+ && ln -s /usr/bin/node /opt/sencha/cmd/bin/linux-x64/node/node \
+ ## * disable phantomjs
+ && echo "skip.slice=1" > /opt/sencha/sencha.cfg
 
 
 EXPOSE 1841
