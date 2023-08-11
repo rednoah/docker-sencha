@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:16.04
 
 LABEL maintainer="Reinhard Pointner <rednoah@filebot.net>"
 
@@ -11,7 +11,7 @@ ENV LANG C.UTF-8
 
 
 RUN apt-get update \
- && DEBIAN_FRONTEND=noninteractive apt-get install -y curl unzip openjdk-11-jdk-headless nodejs npm \
+ && DEBIAN_FRONTEND=noninteractive apt-get install -y curl unzip default-jdk-headless \
  && rm -rvf /var/lib/apt/lists/*
 
 
@@ -22,7 +22,15 @@ RUN set -eux \
  ## * extract installer
  && unzip -o /tmp/SenchaCmd.zip -d /tmp \
  && /tmp/SenchaCmd-*.sh -q -dir /opt/sencha/cmd \
- && rm -v /tmp/*.sh /tmp/*.zip \
+ && rm -v /tmp/*.sh /tmp/*.zip
+
+
+RUN set -eux \
+ ## ** install dependencies
+ && curl -sL https://deb.nodesource.com/setup_7.x | bash - \
+ && apt-get update \
+ && DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs \
+ && rm -rf /var/lib/apt/lists/* \
  ## * remove native dependencies
  && find /opt/sencha/cmd/bin/linux-x64 -type f -executable -print -delete \
  && ln -s /usr/bin/node /opt/sencha/cmd/bin/linux-x64/node/node
