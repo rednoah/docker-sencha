@@ -5,7 +5,7 @@ on:
     paths:
       - 'Dockerfile'
       - '.github/workflows/docker.yml'
-      - 'opt/sencha/**'
+      - 'sencha/**'
 
 jobs:
   docker:

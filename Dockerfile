@@ -36,7 +36,7 @@ RUN set -eux \
  && ln -sf /usr/bin/node /opt/sencha/cmd/bin/linux-x64/node/node
 
 
-COPY opt /
+COPY sencha /opt/sencha
 
 
 EXPOSE 1841
@@ -45,4 +45,4 @@ EXPOSE 1841
 WORKDIR /src
 
 
-ENTRYPOINT ["/opt/sencha/sencha"]
+ENTRYPOINT ["sencha"]
