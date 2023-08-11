@@ -22,8 +22,7 @@ RUN set -eux \
  ## * extract installer
  && unzip -o /tmp/SenchaCmd.zip -d /tmp \
  && /tmp/SenchaCmd-*.sh -q -dir /opt/sencha/cmd \
- && rm -v /tmp/*.sh /tmp/*.zip \
- && ln -sf /opt/sencha/cmd/sencha /opt/sencha/sencha
+ && rm -v /tmp/*.sh /tmp/*.zip
 
 
 RUN set -eux \
@@ -37,10 +36,13 @@ RUN set -eux \
  && ln -sf /usr/bin/node /opt/sencha/cmd/bin/linux-x64/node/node
 
 
+COPY opt /
+
+
 EXPOSE 1841
 
 
 WORKDIR /src
 
 
-ENTRYPOINT ["/opt/sencha/cmd/sencha"]
+ENTRYPOINT ["sencha"]
