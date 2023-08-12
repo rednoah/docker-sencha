@@ -29,7 +29,7 @@ RUN set -eux \
  ## ** install dependencies
  && curl -L https://deb.nodesource.com/setup_7.x | bash - \
  && apt-get update \
- && DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs npm \
+ && DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs \
  && rm -rvf /var/lib/apt/lists/* \
  ## * remove native dependencies
  && find /opt/sencha/cmd/bin/linux-x64 -type f -executable -print -delete \
