@@ -22,15 +22,15 @@ RUN set -eux \
  ## * extract installer
  && unzip -o /tmp/SenchaCmd.zip -d /tmp \
  && /tmp/SenchaCmd-*.sh -q -dir /opt/sencha/cmd \
- && rm -v /tmp/*.sh /tmp/*.zip
+ && rm -rvf /tmp/*.sh /tmp/*.zip
 
 
 RUN set -eux \
  ## ** install dependencies
- && curl -sL https://deb.nodesource.com/setup_7.x | bash - \
+ && curl -L https://deb.nodesource.com/setup_7.x | bash - \
  && apt-get update \
- && DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs \
- && rm -rf /var/lib/apt/lists/* \
+ && DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs npm \
+ && rm -rvf /var/lib/apt/lists/* \
  ## * remove native dependencies
  && find /opt/sencha/cmd/bin/linux-x64 -type f -executable -print -delete \
  && ln -sf /usr/bin/node /opt/sencha/cmd/bin/linux-x64/node/node
